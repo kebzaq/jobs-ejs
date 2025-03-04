@@ -12,6 +12,7 @@ const registerDo = async (req, res, next) => {
   }
   try {
     await User.create(req.body);
+    console.log("REQ>BODY", req.body);
   } catch (e) {
     if (e.constructor.name === "ValidationError") {
       parseVErr(e, req);

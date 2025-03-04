@@ -1,11 +1,15 @@
 const Todo = require("../models/ToDo");
+const mongoose = require("mongoose");
 const parseVErr = require("../utils/parseValidationErrs");
 
 const getAllTodos = async (req, res) => {
-  const todos = await Todo.find({ createdBy: req.user.userId }).sort(
+  const userId = req.user._id.toString();
+  const todos = await Todo.find({ createdBy: userId }).sort(
     "createdAt"
   );
-  console.log(todos);
+  console.log("REQQQQ", userId.toString());
+  console.log("RESSSSSS", res)
+  console.log("TODOOOOO", todos)
   // res.status(StatusCodes.OK).json({ todos, count: todos.length });
     res.render("todos", {todos});
   };

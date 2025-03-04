@@ -9,7 +9,7 @@ const {
     deleteTodo
   } = require("../controllers/todos");
 
-router.route("/todos").get(getAllTodos).post(addTodo);
+router.route("/").get(getAllTodos).post(addTodo);
 router.route("/todos/:id").patch(editTodo).delete(deleteTodo);
 // router
 //   .route("/logon")
