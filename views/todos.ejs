@@ -1,0 +1,30 @@
+<%- include("partials/head.ejs") %> 
+<%- include("partials/header.ejs") %>
+
+< hr />
+<h2>Todo List</h2>
+<table id="todos-table">
+  <tr id="todos-table-header">
+    <th>Title</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th colspan="2"></th>
+  </tr>
+  <% if (todos && todos.length) { %>
+    <% todos.forEach((todo) => { %>
+      <tr>
+        <td><%= todo.title %></td>
+        <td><%= todo.description %></td>
+        <td><%= todo.status %></td>
+        <td><button type="button">edit</button></td>
+        <td><button type="button">delete</button></td>
+      </tr>
+    <% }) %> 
+  <% } %>
+</table> 
+
+<!-- <form method="POST" action="/jobs/delete/0qw9a09as0d9f" style="display: inline">
+  <button>delete</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form> -->
+<%- include("partials/footer.ejs") %>

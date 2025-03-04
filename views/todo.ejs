@@ -1,0 +1,32 @@
+<%- include("partials/head.ejs") %> 
+<%- include("partials/header.ejs") %>
+
+<hr />
+<h2> Add new todo</h2>
+<form method="POST">
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+  <div>
+    <label name="title">Title for todo:</label>
+    <input name="title" />
+  </div>
+  <div>
+    <label name="description">Description for todo:</label>
+    <input name="description" />
+  </div>
+  <div>
+    <label name="status">Status:</label>
+    <input type="status" name="password" />
+  </div>
+  <div>
+    <label name="password1">Confirm your password:</label>
+    <input type="password" name="password1" />
+  </div>
+  <div>
+    <button>Add todo</button>
+    <a href="/">
+      <button type="button">Cancel</button>
+    </a>
+  </div>
+</form>
+
+<%- include("partials/footer.ejs") %>
