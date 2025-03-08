@@ -58,4 +58,3 @@ describe("jobs-ejs puppeteer test", function () {
     });
   });
 });
-``;
